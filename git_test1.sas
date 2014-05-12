@@ -3,7 +3,7 @@
 data xyz;
 input xyz;
 datalines;
-8
+0
 9
 1
 6
