@@ -9,7 +9,7 @@ datalines;
 6
 6
 6
-; run; 
+; run;
 
 /*proc means data=x min median max; run;*/
 
