@@ -4,7 +4,7 @@ data xyz;
 input xyz;
 datalines;
 0
-9
+999
 1
 6
 6
