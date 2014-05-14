@@ -1,28 +1,15 @@
-*this is my first test of Git, doing so on my laptop (Zeus), in Ashveille at 930 Marshall Highway;
+*Ive decided to go in a very different direction with this program;
 
 data xyz;
-input xyz;
-datalines;
-0
-9
-1
-6
-6
-8
+infile xyz;
+xy=x*y;
 ; run;
 
 /*proc means data=x min median max; run;*/
 
 data compare;
-input x;
-datalines4;
-8
-9
-1
-6
-6
-7
-;;;;
+infile 'C:\temp\notthere.dat';
+length xy 8;
 run;
 
 proc compare base=x compare=compare outnoeq outdif outbase outcomp;
