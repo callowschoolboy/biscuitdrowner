@@ -344,3 +344,24 @@ proc print; where race=2;
 *where size=1; run;
 
 proc freq nlevels; run;
+
+
+data sc_tr sc_te;
+set sc;
+WHERE race in (2,3);
+if unit_wp in ("Marine/C=StimP","Siege Tank/80m","Wraith/Gemini_","Drone","Hydralisk/N+Mu","Scourge/Suicid") then output sc_te;
+else output sc_tr;
+run;
+
+
+proc logistic data=sc_tr;
+   class bio (param=ref ref='1') FullDetect (param=ref ref='1');
+   model race (ref='Terran') = totcost tothp throughput pop bt speed bio FullDetect;
+   exact bio FullDetect / estimate=both outdist=dist;
+run;
+
+
+
+
+
+
